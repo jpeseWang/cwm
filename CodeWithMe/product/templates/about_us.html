@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Code With Me | About us{% endblock %} 
+{% block content %}
+<div class="about-section">
+  <h1>About development team</h1>
+  <p>This project was developed by two FPT University freshmen</p>
+  
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/288749892_1955031011553655_3763892802842220398_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xk9XTm8vS1QAX8-vKhu&_nc_ht=scontent.fdad3-6.fna&oh=00_AfCUynLED5nb95-Ym1M8HERWGHwahLdcm3tSeCamjVQ8RA&oe=63A0B8C7" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Nguyen Nhat Huy</h2>
+        <p class="title">Leader & Back-end</p>
+        
+        <p>huynnde180472@fpt.edu.vn</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://f8-zpcloud.zdn.vn/1076250499883730561/1dba8671bb73622d3b62.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h1>Logo of the Project</h1>
+        <p class="title">Est 2022, Python/ Flask</p>
+        
+        <p><button class="button">Start now</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://f6-zpcloud.zdn.vn/6399194476689794083/9e9d5b326830b16ee821.jpg" class="center" alt="John" style="width:75%">
+      <div class="container">
+        <h2>Le Nhat Quang</h2>
+        <p class="title">Designer & Front-end</p>
+        
+        <p>quanglnde180474@fpt.edu.vn</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<style type="text/css">
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+{% endblock %}

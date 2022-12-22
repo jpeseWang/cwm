@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% block title %}
+    Code With Me | Home
+{% endblock %}
+{% block content %}
+    <span>
+    <div class="trangchu" style="color:white" >
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Code With Me Homepage</h1>
+            <p class="lead font-weight-normal" style="font-weight: bold" >Start creating some cool projects right now</p>
+            <a class="btn btn-primary" href="{{ url_for('projects_page') }}">Get Started</a>
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+    <div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Footer Design</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+  <footer class="footer">
+     <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="{{ url_for('about_us_page') }}">About us</a></li>
+                    <li><a href="#">Our services</a></li>
+                    <li><a href="#">Copyright act policy</a></li>
+                    <li><a href="#">Affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Code With Me Project</h4>
+                <ul>
+                    <li><a href="#">Est Nov, 2022</a></li>
+                    <li><a href="#">Created by:</a></li>
+                    <li><a href="https://www.facebook.com/leifisme/" >Le Nhat Quang</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100011403246663">Nguyen Nhat Huy</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+     </div>
+  </footer>
+
+</body>
+</html>
+
+
+</span>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+    <style>
+    body{
+  background-image: url(https://f8-zpcloud.zdn.vn/2179212904341543942/868551579134486a1125.jpg);
+}
+    p{
+      font-family: Geneva, sans-serif;
+        font-size: 6vh;
+    }
+    .position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark{
+        background-color: transparent;
+
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #24262b;
+    padding: 70px 0;
+    max-height: 310px;
+    margin-top: 600px;
+    
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+   
+}
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+.trangchu{
+    margin-left: -400px;
+    width: 150%;
+}
+
+
+
+
+    </style>
+   
+{% endblock %}

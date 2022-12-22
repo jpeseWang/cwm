@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset= "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ project.name }}</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'codemirror/lib/codemirror.css')}}">
+	<script src= "{{ url_for('static', filename= 'codemirror/lib/codemirror.js') }}"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'codemirror/theme/monokai.css') }}">
+	<script src= "{{ url_for('static', filename= 'codemirror/mode/python/python.js') }}"></script>
+</head>
+<body>
+	<div class="bgcolor">
+	<h1 style="background-color: #0b5394 color: white">Learn how to program {{ project.name }}</h1>
+	<br />
+	<h2>Step 1</h2>
+	<p>The drawTile() function will draw a single numbered tile on the board. The tilex and tiley parameters are the board coordinates of the tile. The number parameter is a string of the tile’s number (like '3' or '12'). The adjx and adjy keyword parameters are for making minor adjustments to the position of the tile. For example, passing 5 for adjx would make the tile appear 5 pixels to the right of the tilex and tiley space on the board. Passing -10 for adjx would make the tile appear 10 pixels to the left of the space.
+
+	<p>These adjustment values will be handy when we need to draw the tile in the middle of sliding. If no values are passed for these arguments when drawTile() is called, then by default they are set to 0. This means they will be exactly on the board space given by tilex and tiley.</p>
+
+	<p>The Pygame drawing functions only use pixel coordinates, so first line 217 converts the board coordinates in tilex and tiley to pixel coordinates, which we will store in variables left and top (since getLeftTopOfTile() returns the top left corner’s coordinates). We draw the background square of the tile with a call to pygame.draw.rect() while adding the adjx and adjy values to left and top in case the code needs to adjust the position of the tile.</p>
+
+	<p>Lines 219 to 222 then create the Surface object that has the number text drawn on it. A Rect object for the Surface object is positioned, and then used to blit the Surface object to the display Surface. The drawTile() function doesn’t call pygame.display.update() function, since the caller of drawTile() probably will want to draw more tiles for the rest of the board before making them appear on the screen.</p>
+	<br>
+	</div>
+	<div>
+	<form method= "POST" action="{{url_for('process', project_id= project.id)}}">
+		<textarea name= "raw_data" id="editor"></textarea>
+		<br />
+		<button type="submit">Check and Submit</button>
+	</form>
+	</div>
+	<hr />
+	<div>
+		{{ raw_data | safe }}
+	</div>
+	<h2>Comment Section</h2>
+	{% for comment in comments %}
+	<h3>Username: {{comment.author}}</h3>
+	<p>{{comment.text}}</p>
+	<br />
+	{% endfor %}
+	<br />
+	<form class="input-group mb-3" method="POST" action="/create-comment/{{ project.id }}">
+		<input type='text' id='text' name='text' class="form-control" style="font-size: 20px" placeholder="Comment something here" />
+		<br /><br />
+		<button type="submit" class="btn btn-warning">Comment</button>
+	</form>
+
+
+	<script type="text/javascript">
+		var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {mode: 'python', theme: 'monokai', lineNumbers: true});
+	</script>
+</body>
+<style>
+	.bgcolor{
+		font-family: sans-serif;
+	}
+	button {
+		font-size: 20px;
+		color: white;
+		background-color: #73bf52;
+	}
+	.bgcolor {
+		background-color: #0e2e4b;
+		color: white;
+
+	}
+	html {
+  height: 100%;
+  background: #223;
+  display: grid;
+  place-items: center;
+}
+
+.bgcolor {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+	p {
+		font-size: 20px;
+		color: white;
+		font-family: "Inter", sans-serif;
+	}
+	h1 {
+		text-align: center;
+		color: red;
+	}
+	h2 {
+		color: #6aa84f;
+	}
+	h3 {
+		background-color: #f54254;
+		font-size: 24px;
+		display: inline;
+		color: white;
+		font-family: "Lucida Console", "Courier New", monospace;
+	}
+</style>
+</html>
